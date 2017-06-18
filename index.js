@@ -19,25 +19,7 @@ var app = express();
 //Mongo db connaction
 
 //Connect to MongoDB
-mongoose.Promise = global.Promise;
-//mongoose.connect('mongodb://localhost:27017/contactlist');
 
-//mongoURI = 'mongodb://localhost:27017/contactlist';
-// MONGOLAB_URI = "mongodb://<admin>:<admin>@ds153710.mlab.com:53710/admin-mercer"
-mongoose.connect('mongodb://ashish:ashish@ds027335.mlab.com:27335/angelhack');
-
-
-//On Connection Success
-mongoose.connection.on('connected', () => {
-    console.log('Connected to database mongodb @ 27017');
-});
-
-//On Connection Errors
-mongoose.connection.on('error', (err) => {
-    if (err) {
-        console.log('Error connecting to database mongodb' + err);
-    }
-});
 
 
 
@@ -63,6 +45,25 @@ const handlers = {
     },
     'GetDefinition': function () {
         console.log("here 1");
+        mongoose.Promise = global.Promise;
+        //mongoose.connect('mongodb://localhost:27017/contactlist');
+
+        //mongoURI = 'mongodb://localhost:27017/contactlist';
+        // MONGOLAB_URI = "mongodb://<admin>:<admin>@ds153710.mlab.com:53710/admin-mercer"
+        mongoose.connect('mongodb://ashish:ashish@ds027335.mlab.com:27335/angelhack');
+
+
+        //On Connection Success
+        mongoose.connection.on('connected', () => {
+            console.log('Connected to database mongodb @ 27017');
+        });
+
+        //On Connection Errors
+        mongoose.connection.on('error', (err) => {
+            if (err) {
+                console.log('Error connecting to database mongodb' + err);
+            }
+        });
         var slot = this.event.request.intent.slots.Term.value;
         if (slot) {
             var term = Object.keys(definitions).find(keyFromSlot(slot));
@@ -87,7 +88,7 @@ const handlers = {
                         //res.json({ msg: 'Failed to add contact' + err });
                     }
                     else {
-                            console.log("here 6");
+                        console.log("here 6");
                         //res.json({ msg: 'Success' });
                     }
                 });
