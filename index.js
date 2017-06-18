@@ -6,10 +6,8 @@ var express = require("express")
 var router = express.Router();
 var bodyParser = require('body-parser');
 var app = express();
-var json = require('./test.json');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-var jsonfile = require('jsonfile')
 var mongoose = require('mongoose');
 const GenerateForm = require('../models/generateform');
 
