@@ -20,7 +20,7 @@ export class GeneralformComponent implements OnInit {
   ) { }
 
   ToggleForm() {
-    this.contactService.getAlexaData()
+    this.contactService.getGenerateFormData()
       .subscribe(result => {
         console.log(result);
       });
@@ -35,7 +35,7 @@ export class GeneralformComponent implements OnInit {
   }
 
   ngOnInit() {
-    setInterval(() => this.ToggleForm(), 15000);
+   // setInterval(() => this.ToggleForm(), 15000);
   }
 
 }

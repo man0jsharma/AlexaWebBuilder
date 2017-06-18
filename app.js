@@ -13,7 +13,11 @@ const route = require('./routes/route');
 
 //Connect to MongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/contactlist');
+//mongoose.connect('mongodb://localhost:27017/contactlist');
+
+//mongoURI = 'mongodb://localhost:27017/contactlist';
+// MONGOLAB_URI = "mongodb://<admin>:<admin>@ds153710.mlab.com:53710/admin-mercer"
+mongoose.connect('mongodb://ashish:ashish@ds027335.mlab.com:27335/angelhack');
 
 
 //On Connection Success

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const Contact = require('../models/contacts');
+const GenerateForm = require('../models/generateform');
 const fs = require('fs');
 const jsonFile = '../contactlist/models/test.json';
 
@@ -11,6 +12,13 @@ router.get('/contacts', (req, res, next) => {
         res.json(contacts);
     })
 });
+
+router.get('/generateform', (req, res, next) => {
+    GenerateForm.find(function (err, generateforms) {
+        res.json(generateforms);
+    })
+});
+
 
 //Adding Contacts
 router.post('/contact', (req, res, next) => {
@@ -30,6 +38,24 @@ router.post('/contact', (req, res, next) => {
     });
 });
 
+
+router.post('/generateform', (req, res, next) => {
+    console.log(req.body);
+    var newGenerateForm = new GenerateForm({
+        showSignIn: req.body.showSignIn,
+        showSignUp: req.body.showSignUp,
+        showPills: req.body.showPills,
+    });
+
+    newGenerateForm.save((err, generateform) => {
+        if (err) {
+            res.json({ msg: 'Failed to add contact' + err });
+        }
+        else {
+            res.json({ msg: 'Success' });
+        }
+    });
+});
 
 
 //Deleting Contacts
