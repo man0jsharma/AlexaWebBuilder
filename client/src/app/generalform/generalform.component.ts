@@ -22,7 +22,11 @@ export class GeneralformComponent implements OnInit {
   ToggleForm() {
     this.contactService.getGenerateFormData()
       .subscribe(result => {
-        console.log(result);
+        console.log(result[result.length - 1]);
+        var latest = result[result.length - 1];
+        this.showSignIn = latest.showSignIn,
+        this.showSignUp = latest.showSignUp,
+        this.showPills = latest.showPills
       });
   }
 
@@ -35,7 +39,7 @@ export class GeneralformComponent implements OnInit {
   }
 
   ngOnInit() {
-   // setInterval(() => this.ToggleForm(), 15000);
+   setInterval(() => this.ToggleForm(), 5000);
   }
 
 }
