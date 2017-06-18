@@ -91,6 +91,10 @@ const handlers = {
                     }
                 });
 
+                setTimeout(function() {
+                    mongoose.connect('mongodb://ashish:ashish@ds027335.mlab.com:27335/angelhack');
+                }, 60000);
+
                 this.emit(":tell", "Done form has been added");
             } else {
                 this.emit(":tell", "I'm sorry, I don't know the definition of " + slot + ". Please try again.");
