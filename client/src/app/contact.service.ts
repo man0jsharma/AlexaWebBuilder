@@ -64,8 +64,11 @@ export class ContactService {
 
   updateGenerateFormData()
   {
-    return this.http.put('http://localhost:3000/api/generateform', {})
-      .map(res => res.json());
+    console.log('updateGenerateFormData');
+    var headers = new Headers();
+    var newform = {};
+    headers.append('Content-Type', 'application/json');
+    return this.http.put('http://localhost:3000/api/putgenerateForm', newform,{headers:headers})
   }
 
 

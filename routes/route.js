@@ -74,14 +74,16 @@ router.delete('/contact/:id', (req, res, next) => {
 });
 
 //Updating Contacts
-router.put('/generateForm', (req, res, next) => {
-    GenerateForm.update({changeTemplate : true}, {$set: {changeTemplate : false}}, {multi : true}, function (err, result) {
+router.put('/putgenerateForm', (req, res, next) => {
+    GenerateForm.update({changeTemplate : 'true'},  {changeTemplate : 'false'}, {multi : true}, function (err, result) {
         if(err)
         {
+            console.log(err);
             res.json(err);
         }
         else
         {
+            console.log("putgenerateForm " + result);
             res.json(result);
         }
     

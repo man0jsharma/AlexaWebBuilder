@@ -15,6 +15,7 @@ export class GeneralformComponent implements OnInit {
   showVideo: boolean = false;
   showFooter: boolean = false;
   theme: String;
+  changeTemplate: boolean = false;
   changeBackGround: string;
   isDisabled: boolean = true;
   randomNumber: any = -1;
@@ -51,12 +52,15 @@ export class GeneralformComponent implements OnInit {
         this.showPills = latest.showPills;
         this.showFooter = latest.showFooter;
         this.showVideo = latest.showVideo;
+        this.changeTemplate = latest.changeTemplate;
 
-        if(latest.changeTemplate)
+        if(this.changeTemplate === true)
         {
+            console.log("ChangeTemplate");
             this.randomNumber = this.generateRandom(0, 4, this.randomNumber);
             var div = this.elRef.nativeElement.querySelector('link').href = this.templates[this.randomNumber];
             this.contactService.updateGenerateFormData();
+            //console.log(response);
         }
       });
   }
@@ -70,7 +74,7 @@ export class GeneralformComponent implements OnInit {
   }
 
   ngOnInit() {
-    setInterval(() => this.ToggleForm(), 5000);
+    setInterval(() => this.ToggleForm(), 1000);
   }
 
 }
