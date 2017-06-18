@@ -45,6 +45,9 @@ router.post('/generateform', (req, res, next) => {
         showSignIn: req.body.showSignIn,
         showSignUp: req.body.showSignUp,
         showPills: req.body.showPills,
+        showFooter: req.body.showFooter,
+        changeTemplate : req.body.changeTemplate,
+        showVideo : req.body.showVideo
     });
 
     newGenerateForm.save((err, generateform) => {
@@ -71,9 +74,17 @@ router.delete('/contact/:id', (req, res, next) => {
 });
 
 //Updating Contacts
-router.put('/contact', (req, res, next) => {
-    Contact.update({ _id: req.params.id }, function (err, result) {
-
+router.put('/generateForm', (req, res, next) => {
+    GenerateForm.update({changeTemplate : true}, {$set: {changeTemplate : false}}, {multi : true}, function (err, result) {
+        if(err)
+        {
+            res.json(err);
+        }
+        else
+        {
+            res.json(result);
+        }
+    
     })
 });
 

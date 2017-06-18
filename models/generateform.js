@@ -22,6 +22,11 @@ const GenerateFormSchema = mongoose.Schema({
     changeTemplate:{
         type: Boolean,
         required: true 
+    },
+
+    showVideo:{
+        type: Boolean,
+        required: true 
     }
 
 });

@@ -62,4 +62,11 @@ export class ContactService {
   }
 
 
+  updateGenerateFormData()
+  {
+    return this.http.put('http://localhost:3000/api/generateform', {})
+      .map(res => res.json());
+  }
+
+
 }

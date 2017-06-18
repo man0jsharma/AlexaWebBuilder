@@ -13,6 +13,7 @@ export class GeneralformComponent implements OnInit {
   showSignUp: boolean = false;
   showPills: boolean = false;
   showVideo: boolean = false;
+  showFooter: boolean = false;
   theme: String;
   changeBackGround: string;
   isDisabled: boolean = true;
@@ -43,15 +44,20 @@ export class GeneralformComponent implements OnInit {
           "https://bootswatch.com/sandstone/bootstrap.min.css"
         ];
         console.log(result[result.length - 1]);
-
-
-        this.randomNumber = this.generateRandom(0, 4, this.randomNumber);
-        var div = this.elRef.nativeElement.querySelector('link').href = this.templates[this.randomNumber];
+      
         var latest = result[result.length - 1];
         this.showSignIn = latest.showSignIn;
         this.showSignUp = latest.showSignUp;
         this.showPills = latest.showPills;
+        this.showFooter = latest.showFooter;
+        this.showVideo = latest.showVideo;
 
+        if(latest.changeTemplate)
+        {
+            this.randomNumber = this.generateRandom(0, 4, this.randomNumber);
+            var div = this.elRef.nativeElement.querySelector('link').href = this.templates[this.randomNumber];
+            this.contactService.updateGenerateFormData();
+        }
       });
   }
 

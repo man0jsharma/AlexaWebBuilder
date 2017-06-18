@@ -2,9 +2,6 @@
   <link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.min.css">
 </head>
 <div class="container">
-
-
-
   <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop *ngIf="showVideo">
     <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
     <source src="http://thenewcode.com/assets/videos/the-sky-is-calling-large.webm" type="video/webm">
@@ -131,7 +128,7 @@
 <hr>
 
 
-<footer>
+<footer *ngIf="showFooter">
   <p>Powered By Amazon Alexa</p>
   <p>Contact information: <a href="mailto:someone@example.com">maksymas@gmail.com</a>.</p>
 </footer>
