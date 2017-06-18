@@ -13,6 +13,17 @@ const GenerateFormSchema = mongoose.Schema({
         type: Boolean,
         required: true
     },
+
+    showFooter:{
+        type: Boolean,
+        required: true
+    },
+
+    changeTemplate:{
+        type: Boolean,
+        required: true 
+    }
+
 });
 
 
