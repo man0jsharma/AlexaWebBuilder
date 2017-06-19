@@ -69,7 +69,8 @@ const handlers = {
             var obj = {
                 showSignIn: false,
                 showSignUp: false,
-                showPills: true
+                showPills: true,
+                
             };
             console.log("here 3");
             const definition = definitions[term];
