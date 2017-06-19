@@ -12,7 +12,7 @@ export class ContactService {
 
   getContact()
   {
-    return this.http.get('http://localhost:"+ process.env.PORT + "/api/contacts')
+    return this.http.get('https://serene-anchorage-26928.herokuapp.com/api/contacts')
       .map(res => res.json());
   }
 
@@ -21,14 +21,14 @@ export class ContactService {
   {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:"+ process.env.PORT + "/api/contact',newContact, {headers:headers})
+    return this.http.post('https://serene-anchorage-26928.herokuapp.com/api/contact',newContact, {headers:headers})
       .map(res => res.json());
   }
 
   //delete contact
   deleteContact(id)
   {
-    return this.http.delete('http://localhost:"+ process.env.PORT + "/api/contact/'+ id)
+    return this.http.delete('https://serene-anchorage-26928.herokuapp.com/api/contact/'+ id)
     .map(res => res.json());
   }
 
@@ -36,7 +36,7 @@ export class ContactService {
   {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.put('http://localhost:"+ process.env.PORT + "/api/contact/',newContact, {headers:headers})
+    return this.http.put('https://serene-anchorage-26928.herokuapp.com/api/contact/',newContact, {headers:headers})
   }
 
 
@@ -50,14 +50,14 @@ export class ContactService {
 
   getAlexaData()
   {
-    return this.http.get('http://localhost:"+ process.env.PORT + "/api/alexa')
+    return this.http.get('https://serene-anchorage-26928.herokuapp.com/api/alexa')
       .map(res => res.json());
   }
 
 
   getGenerateFormData()
   {
-    return this.http.get('http://localhost:"+ process.env.PORT + "/api/generateform')
+    return this.http.get('https://serene-anchorage-26928.herokuapp.com/api/generateform')
       .map(res => res.json());
   }
 
