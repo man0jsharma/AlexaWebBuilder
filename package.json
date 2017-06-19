@@ -4,7 +4,7 @@
   "description": "Contact list project - 1st Project",
   "main": "index.js",
   "scripts": {
-    "start": "ng serve"
+    "start": "node app.js"
   },
   "author": "ManojSharma",
   "license": "ISC",
