@@ -17,7 +17,7 @@ mongoose.Promise = global.Promise;
 
 //mongoURI = 'mongodb://localhost:27017/contactlist';
 // MONGOLAB_URI = "mongodb://<admin>:<admin>@ds153710.mlab.com:53710/admin-mercer"
-mongoose.connect('mongodb://man0jsharma:man0jsharma@ds131312.mlab.com:31312/man0jsharma');
+mongoose.connect('mongodb://ashish:ashish@ds027335.mlab.com:27335/angelhack');
 
 
 //On Connection Success
