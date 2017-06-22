@@ -1,1 +1,12 @@
 # AlexaWebBuilder
+
+
+Using Natural Processing skill with the machine learning capabilities of Amazon Alexa, 
+this project demostrates how alexa can insert/delete/manipulate the DOM and build website for the User
+
+Commands like
+#1 : Alexa, Can you create a SIGN UP form
+#2 : Can you change the color of the background
+#3 : Can you change the template of my website
+
+
